@@ -33,7 +33,7 @@
         <lombok.version>1.18.32</lombok.version>
     </properties>
 
-    <!-- 第一天仅需核心依赖 -->
+
     <dependencyManagement>
         <dependencies>
             <!-- Spring Cloud 依赖管理 -->

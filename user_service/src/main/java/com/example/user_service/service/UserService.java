@@ -1,9 +1,11 @@
 package com.example.user_service.service;
 
 import com.example.user_service.dto.UserDto;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface UserService {
 
     /**
@@ -17,7 +19,7 @@ public interface UserService {
      * @param username
      * @return
      */
-    UserDto getUserByUsername(String username);
+    UserDto getUserByUserName(String username);
 
     /**
      * 用户列表

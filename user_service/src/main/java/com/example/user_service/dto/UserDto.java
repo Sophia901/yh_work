@@ -7,10 +7,9 @@ import java.time.LocalDateTime;
 
 @Data
 public class UserDto {
-    private String userName;
+    private String username;
     private String password;
 
     @JsonFormat(locale="zh",timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
-    private LocalDateTime gmtCreate;
-
+    private LocalDateTime gmt_create;
 }
