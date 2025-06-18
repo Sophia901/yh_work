@@ -30,13 +30,15 @@ public class AuthController {
     private UserService userService;
 
     @PostMapping("/register")
-    public PlainResult<Void> register(@RequestBody UserDto userDto) {
+    public PlainResult<Long> register(@RequestBody UserDto userDto) {
         UserDto user = userService.getUserByUserName(userDto.getUsername());
         if (user != null) {
             return PlainResult.fail(400, "用户名已存在");
         }
-        userService.register(userDto);
-        return PlainResult.success(null);
+        // 2.获取注册返回的用户ID
+        Long userId = userService.register(userDto);
+        // 3. 返回用户ID
+        return PlainResult.success(userId);
     }
 
     @PostMapping("/login")

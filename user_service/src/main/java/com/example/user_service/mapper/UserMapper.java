@@ -17,4 +17,12 @@ import org.apache.ibatis.annotations.Select;
 public interface UserMapper extends BaseMapper<User> {
 
     User findOneByUsername(@Param("username") String username);
+
+    // 新增分片键查询方法
+    @Select("SELECT * FROM user WHERE user_id = #{userId}")
+    User selectByUserId(@Param("userId") Long userId);
+
+    // 新增方法：按用户名查询（使用注解实现）
+    @Select("SELECT * FROM user WHERE username = #{username}")
+    User findByUsername(@Param("username") String username);
 }

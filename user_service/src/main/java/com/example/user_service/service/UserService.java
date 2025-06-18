@@ -12,7 +12,7 @@ public interface UserService {
      * 用户注册
      * @param user
      */
-    void register(UserDto user);
+    Long register(UserDto user);
 
     /**
      * 根据用户名查询用户信息

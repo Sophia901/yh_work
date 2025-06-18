@@ -22,4 +22,11 @@
         where
         username = #{username,jdbcType=VARCHAR}
     </select>
+    <!-- 新增selectByUserId的SQL映射 -->
+    <select id="selectByUserId" resultMap="BaseResultMap">
+        SELECT
+        <include refid="Base_Column_List"/>
+        FROM user
+        WHERE user_id = #{userId,jdbcType=BIGINT}
+    </select>
 </mapper>

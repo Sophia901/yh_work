@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 @TableName(value = "user")
 public class User implements Serializable {
-    @TableId(value = "user_id",type = IdType.AUTO)
-    private Integer user_id;
+    @TableId(value = "user_id",type = IdType.ASSIGN_ID)
+    private Long user_id;
     @TableField("username")
     private String username;
     @TableField("password")
@@ -27,11 +27,11 @@ public class User implements Serializable {
     @TableField(exist = false)
     private static final long serialVersionUID = 1L;
 
-    public Integer getUser_id() {
+    public Long getUser_id() {
         return user_id;
     }
 
-    public void setUser_id(Integer user_id) {
+    public void setUser_id(Long user_id) {
         this.user_id = user_id;
     }
 
@@ -74,6 +74,9 @@ public class User implements Serializable {
     public void setGmt_create(LocalDateTime gmt_create) {
         this.gmt_create = gmt_create;
     }
+
+    // 添加无参构造
+    public User() {}
 
     @Override
     public boolean equals(Object that) {
